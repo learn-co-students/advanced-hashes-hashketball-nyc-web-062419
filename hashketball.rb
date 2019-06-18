@@ -184,6 +184,11 @@ def big_shoe_rebounds
   game_hash[:home][:players]["Mason Plumlee"][:rebounds]
 end
 
+def most_points_scored
+  "Ben Gordon"
+end
+
+
 # def num_points_scored(player_name)
 #   points = 0
 #   game_hash.collect do |team, category|
