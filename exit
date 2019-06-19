@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /mnt/c/Users/Joe/Documents/dev/labs/advanced-hashes-hashketball-nyc-web-062419/hashketball.rb @ line 33 Object#num_points_scored:
+
+    [1;34m31[0m: [32mdef[0m [1;34mnum_points_scored[0m(player_name)
+    [1;34m32[0m:   game_hash.values.each [32mdo[0m |team|
+ => [1;34m33[0m:     binding.pry
+    [1;34m34[0m:     team[[33m:players[0m].each [32mdo[0m |player|
+    [1;34m35[0m:       binding.pry
+    [1;34m36[0m:       [32mreturn[0m player[[33m:points[0m] [32mif[0m player.key(player_name)
+    [1;34m37[0m:       binding.pry
+    [1;34m38[0m:       [32mend[0m
+    [1;34m39[0m:   [32mend[0m
+    [1;34m40[0m: 
+    [1;34m41[0m: [32mend[0m
+
