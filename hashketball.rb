@@ -1,3 +1,5 @@
+require 'pry'
+
 def game_hash 
     {
         home: {
@@ -115,34 +117,31 @@ def game_hash
     }
 end
 
-
- def num_points_scored(selected_player)
-  points_to_return = 0
+def returnPlayer(selected_player)
   hash = game_hash
-  game_hash.each do |sides,teams|
-    teams[:players].each do |player,data|
-      if player == selected_player
-      points_to_return += data[:points]
-      end
+  allPlayers = []
+  hash.each do |side|
+    side[1][:players].each do |player|
+      allPlayers << player
     end
   end
-  points_to_return
+  thePlaya = allPlayers.find do |player|
+    player[0] == selected_player
+  end
+  thePlaya
+end
+
+
+ def num_points_scored(selected_player)
+  thePlaya = returnPlayer(selected_player)
+  thePlaya[1][:points]
 end
 
 
  def shoe_size(selected_player)
-  value_to_return = 0
-  hash = game_hash
-  game_hash.each do |sides,teams|
-    teams[:players].each do |player,data|
-      if player == selected_player
-        value_to_return += data[:shoe]
-      end
-    end
-  end
-  value_to_return
+  thePlaya = returnPlayer(selected_player)
+  thePlaya[1][:shoe]
 end
-
 
  def team_colors(team)
   colors = []
@@ -284,3 +283,4 @@ def long_name_steals_a_ton?
 end
 
 
+puts shoe_size("DeSagna Diop")
